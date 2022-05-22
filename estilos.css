@@ -1,0 +1,27 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-collapse {
+    justify-content: space-between;
+}
+
+.main {
+    /* margin-top: 4rem; */
+    margin: 4.5rem 2rem 0 2rem;
+}
+
+.color-white {
+    color: white;
+}
+
+.desactive {
+    display: none;
+}
+
+.active {
+    display: block;
+}

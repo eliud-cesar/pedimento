@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bodega</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- ENCABEZADO -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio
+                    <span class="visually-hidden">(vender)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="usuarios.html">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Bodega</a>
+                </li>
+                </ul>
+                <div class="d-flex">
+                    <span class="color-white">Milgaro del pedimento</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCION PRINCIPAL -->
+    <main class="main">
+        <!-- TABLA -->
+        <h3 class="text-success">Productos</h3>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Nombre del producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Seccion</th>
+            </tr>
+            </thead>
+            <tbody id="tabla-bodega-datos">
+            </tbody>
+        </table>
+        
+        <!-- FORMULARIO -->
+        <h3 class="text-success">Agregar un nuevo producto</h3>
+        <div class="alert alert-dismissible alert-warning desactive" id="mensaje-advertencia">
+            <h4 class="alert-heading">Advertencia!</h4>
+            <p class="mb-0">Escribe todo los datos correctamente para poder agregar un nuevo producto</p>
+        </div>
+        <form id="formulario-enviar-producto">
+            <div class="form-group">
+                <label class="form-label mt-1">Nombre del producto
+                    <input name="producto" type="text" class="form-control" placeholder="Escibre el nombre del producto">
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Precio
+                    <input name="precio" type="number" class="form-control" placeholder="Escibre la precio">
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Cantidad
+                    <input name="cantidad" type="number" class="form-control" placeholder="Escibre la cantidad">
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Seccion
+                    <input name="seccion" type="text" class="form-control" placeholder="Escibre la seccion">
+                </label>
+            </div>
+            <input class="btn btn-info mb-2" type="submit" value="Enviar">
+        </form>
+    </main>
+
+    <!-- LOGICA POR PARTE DE LA BASE DE DATOS -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAaGAtwMq6TwI-Jbj2wnrbSNIs4KWr_nKE",
+        authDomain: "milagro-del-pedimento.firebaseapp.com",
+        projectId: "milagro-del-pedimento",
+        storageBucket: "milagro-del-pedimento.appspot.com",
+        messagingSenderId: "973158093168",
+        appId: "1:973158093168:web:b51fbb4e8e62d5d8cf3fb5"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="funciones-bodega.js"></script>
+</body>
+</html>
